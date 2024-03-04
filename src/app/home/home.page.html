@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Modal examples</h1>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="openModal()">Open from Controller</ion-button>
+    </ion-buttons>
+ 
+    <ion-buttons slot="end">
+      <ion-button id="open-modal" color="secondary" [strong]="true">Open from Inline</ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+  <p>{{ messageResp }}</p>
+
+
+  <ion-modal trigger="open-modal" aria-labelledby="inline-modal-title"
+  (didPresent)="onWillPresent($event)"
+  (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title id="inline-modal-title">Inline Modal</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <h2 tabindex="-1" id="inline-modal-h2">Should focus here</h2>
+        <ion-item>
+          <ion-label position="stacked">Enter your name</ion-label>
+          <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
+        </ion-item>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
+</ion-content>
