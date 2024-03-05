@@ -56,4 +56,4 @@ The filkes will be located inside folder electron/dist
 ## Modal controller does not trigger ngOnDestroy when dismissing
 [link](https://github.com/ionic-team/ionic-framework/issues/24460)
 
-Should be fixed in Ionic-Angular v6.0.3
+Should be fixed in Ionic-Angular v6.2.3
